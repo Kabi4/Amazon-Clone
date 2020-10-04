@@ -1,0 +1,31 @@
+.header{
+    background-color: #131921;
+    display: flex;
+    flex-direction: row;
+}
+
+.header__logo{
+    width: 200px;
+}
+
+.header__search{
+    flex: 1;
+    display: flex;
+}
+
+.header__searchInput{
+    width: 100%;
+    height: 22px;
+    padding: 10px;
+    align-self: center;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.header__searchInput:-ms-input-placeholder{
+    color: #ccc;
+    text-decoration: solid;
+    font-style: oblique;
+}

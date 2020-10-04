@@ -1,0 +1,11 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCeL5a1k-3p1y1iqhklJHy74LqI52cLOCY",
+  authDomain: "clone-5bc21.firebaseapp.com",
+  databaseURL: "https://clone-5bc21.firebaseio.com",
+  projectId: "clone-5bc21",
+  storageBucket: "clone-5bc21.appspot.com",
+  messagingSenderId: "62242280216",
+  appId: "1:62242280216:web:15f344f802a8be578d446d",
+  measurementId: "G-1SE90GP8PL"
+};
