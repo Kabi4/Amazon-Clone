@@ -1,5 +1,5 @@
 import React from 'react';
-import image from './../../Assets/Logo/Logo.png';
+import image from './../../Assets/Logo/Logo.jpg';
 
 const Logo = (props) => {
     return (
@@ -7,4 +7,4 @@ const Logo = (props) => {
     )
 }
 
-export default Logo
+export default Logo;

@@ -1,0 +1,27 @@
+.links{
+    border: 2px solid transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    transition: all 0.2s ease-out;
+    margin: 0 5px;
+}
+
+.links:hover{
+    border: 2px solid white;
+}
+
+.link__child1{
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.link__child2{
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}

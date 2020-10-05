@@ -1,0 +1,32 @@
+.btn{
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid;
+    border-color: transparent;
+    border-image:  linear-gradient(to right,#a88734 ,#9c7e31, #846a29) 3;
+    background-color: #f0c14b;
+    padding: 5px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-out;
+    color: white;
+    margin: 0 10px;
+    box-shadow: 2px 2px 3px 0 #ca991d,
+                -1px -1px 2px 0 #f5b617;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus{
+    background-color: #f3b926;
+    
+}
+
+.btn:active{
+    box-shadow: 8px 8px 10px 0 #ca991d inset,
+                -3px -3px 6px 0 #f5b617 inset;
+}
