@@ -8,7 +8,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
 import Links from '../../Components/LinkNav/Links';
 
-export default class Header extends Component {
+import { connect } from 'react-redux';
+
+class Header extends Component {
 
     render() {
         return (
@@ -28,10 +30,21 @@ export default class Header extends Component {
                 <Link to="/cart" className={classes.header__cartLink}>
                     <div className={classes.header__cart}>
                         <ShoppingCartIcon className={classes.header__shoppingCart} />
-                        <p className={classes.header__cart__items}>0</p>
+                        <p className={classes.header__cart__items}>{this.props.basket.length===0?0
+                        :this.props.basket.reduce((ele,red)=>{return red.quantity+ele},0)
+                        }</p>
                     </div>
                 </Link>
             </nav>
         )
     }
+};
+
+const mapStateToProps = (state) =>{
+    return{
+        basket: state.basket.items
+    }
 }
+
+
+export default connect(mapStateToProps,null)(Header);
