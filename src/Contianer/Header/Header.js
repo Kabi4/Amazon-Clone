@@ -8,11 +8,16 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
 import Links from '../../Components/LinkNav/Links';
 
+import * as actionCreators from './../../Store/ActionCreators/Index';
+
 import { connect } from 'react-redux';
 
 class Header extends Component {
-
     render() {
+        let loginLink = <Links first="Hello" second="Sign In" pathing="/login" />;
+        if(this.props.name!==null){
+            loginLink = <Links click={this.props.logout} name={this.props.name} first="Hello" second="Sign In" pathing="/login" />;
+        }
         return (
             <nav className={classes.header}>
                 <Link to='/'>
@@ -23,9 +28,9 @@ class Header extends Component {
                     <SearchIcon className={classes.header__searchIcon}/>
                 </div>
                 <div className={classes.header__navbar}>
-                    <Links first="Hello," second="Sing In" pathing="/login" />
-                    <Links first="Returns," second="& Orders" pathing="/" />
-                    <Links first="Try," second="Prime" pathing="/" />
+                    {loginLink}
+                    <Links first="Returns" second="& Orders" pathing={this.props.name?"/":"/login"} />
+                    <Links first="Try" second="Prime" pathing="/" />
                 </div>
                 <Link to="/cart" className={classes.header__cartLink}>
                     <div className={classes.header__cart}>
@@ -42,9 +47,15 @@ class Header extends Component {
 
 const mapStateToProps = (state) =>{
     return{
-        basket: state.basket.items
+        basket: state.basket.items,
+        name: state.user.name
     }
 }
 
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        logout: ()=>{dispatch(actionCreators.logout())}
+    }
+}
 
-export default connect(mapStateToProps,null)(Header);
+export default connect(mapStateToProps,mapDispatchToProps)(Header);
